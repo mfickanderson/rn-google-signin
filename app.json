@@ -19,7 +19,8 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "travelshare"
     },
     "android": {
       "adaptiveIcon": {
@@ -29,6 +30,19 @@
     },
     "web": {
       "favicon": "./assets/images/favicon.png"
+    },
+    "plugins": {
+      "expo": {
+        "android": {
+          "googleServicesFile": "./google-services.json"
+        },
+        "ios": {
+          "googleServicesFile": "./GoogleService-Info.plist"
+        },
+        "plugins": [
+          "@react-native-google-signin/google-signin"
+        ]
+      }
     }
   }
 }

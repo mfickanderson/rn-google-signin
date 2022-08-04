@@ -1,9 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
+import React from 'react';
+import { useColorScheme } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import useCachedResources from './hooks/useCachedResources';
-import useColorScheme from './hooks/useColorScheme';
 import Navigation from './navigation';
+
+import SignIn from './screens/SignIn';
 
 export default function App() {
   const isLoadingComplete = useCachedResources();
@@ -14,8 +17,11 @@ export default function App() {
   } else {
     return (
       <SafeAreaProvider>
-        <Navigation colorScheme={colorScheme} />
-        <StatusBar />
+         <Navigation
+          colorScheme={colorScheme}
+          // userInfo={userInfo}
+          // signOut={this._signOut}
+        />
       </SafeAreaProvider>
     );
   }
